@@ -57,7 +57,7 @@ export class Renderer {
 
   heading(text: string, level: number, raw: string): string {
     const id: string = this.options.headerPrefix +
-      raw.toLowerCase().replace(/[^\w]+/g, "-");
+      raw.toLowerCase().replace(/([\s]|-)+/g, "-");
 
     return `<h${level} id="${id}">${text}</h${level}>\n`;
   }
